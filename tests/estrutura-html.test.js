@@ -24,7 +24,7 @@ function getAllHTMLFileNames(directory) {
 const htmlFileNames = getAllHTMLFileNames(directory);
 
 htmlFileNames.forEach((pagina) => {
-  describe(`Estrutura ${pagina}`, () => {
+  describe(`Testando ${pagina}`, () => {
     let dom;
     let document;
     let htmlContent;
@@ -45,15 +45,19 @@ htmlFileNames.forEach((pagina) => {
       expect(doctype.systemId).toBe("");
     });
 
-    test("Estrutura básica", () => {
-      const htmlTag = document.querySelector("html");
-      const headTag = document.querySelector("head");
-      const bodyTag = document.querySelector("body");
+    test("<html>", () => {
+      expect(htmlContent).toContain("<html");
+      expect(htmlContent).toContain("</html>");
+    });
 
-      // Verifica se as tags HTML foram encontradas
-      expect(htmlTag).toBeTruthy();
-      expect(headTag).toBeTruthy();
-      expect(bodyTag).toBeTruthy();
+    test("<head>", () => {
+      expect(htmlContent).toContain("<head>");
+      expect(htmlContent).toContain("</head>");
+    });
+
+    test("<body>", () => {
+      expect(htmlContent).toContain("<body>");
+      expect(htmlContent).toContain("</body>");
     });
 
     test("<title>", () => {
