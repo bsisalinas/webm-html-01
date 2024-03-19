@@ -1,0 +1,16 @@
+{
+  "name": "webm-html-01",
+  "version": "1.0.0",
+  "description": "Atividade 01 de HTML",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest",
+    "test:watch": "jest --watch"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "jest": "^29.7.0",
+    "jsdom": "^24.0.0"
+  }
+}
